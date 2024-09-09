@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<!-- After adding configuration we need to use hibernet configure and session factory tag
+		and in that we have to use property tag,in that add Driver class, url, username and password .
+		-->
+	
+<hibernate-configuration>
+
+	<session-factory>
+		
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernate_db</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">Admin#123</property>
+		
+		<property name="hbm2ddl.auto">update</property> <!-- To create table automatically by using hibernet we use this-->
+		
+		<property name="show_sql">sql</property> <!--  To show SQL qureies, or to provide sql queries by hibernet-->
+		
+		<mapping class="entities.User"/> <!--  To mapping, giving path of User class -->
+		
+	</session-factory>
+
+</hibernate-configuration>
